@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  background: #111111;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px; /* Add perspective to create 3D space */
+}
+
+img {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: #98f1c28e 8px 8px 20px;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.9s ease;
+  backface-visibility: hidden; /* Prevent the backside from being visible */
+}
+
+.active {
+  transform: translateX(0%);
+  scale: 1.2;
+  z-index: 2;
+}
+
+img {
+  transform: translateX(120%);
+}
+
+.next {
+  transform: translateX(0);
+  z-index: -1;
+}
+
+.previous {
+  transform: translateX(-100%);
+  z-index: 0;
+}
+
+.active:hover {
+  transform-style: preserve-3d;
+  transform: scale(1.06) rotate3d(1, 1, 1, -15deg);
+  transform-origin: center; /* Adjust the rotation origin */
+}
+
+/* .next:hover {
+  transform: scale(1.03);
+} */
+
+/* Reset the transform and transition for "previous" images */
