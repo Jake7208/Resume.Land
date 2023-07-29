@@ -32,7 +32,7 @@ images.forEach((image) => {
 
     // Reset the auto-cycle interval when the user clicks
     clearInterval(autoCycleInterval);
-    autoCycleInterval = setInterval(autoCycleCarousel, 3000);
+    autoCycleInterval = setInterval(autoCycleCarousel, 2500);
   });
 });
 
@@ -59,3 +59,21 @@ function autoCycleCarousel() {
 
 // Start auto-cycling the carousel every 2.5 seconds
 autoCycleInterval = setInterval(autoCycleCarousel, 2500);
+
+const handleOnMouseMove = (e) => {
+  const { currentTarget } = e; // Use currentTarget instead of target
+
+  const rect = currentTarget.getBoundingClientRect(), // Use currentTarget instead of target
+    x = e.clientX - rect.left,
+    y = e.clientY - rect.top;
+
+  currentTarget.style.setProperty("--mouse-x", x + "px");
+  currentTarget.style.setProperty("--mouse-y", y + "px");
+};
+for (const card of document.querySelectorAll(".builder")) {
+  card.addEventListener("mousemove", handleOnMouseMove);
+}
+
+for (const card of document.querySelectorAll(".gallery")) {
+  card.addEventListener("mousemove", handleOnMouseMove);
+}

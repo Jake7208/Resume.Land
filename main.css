@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,46 +10,338 @@ html {
   background: #111111;
   overflow-x: hidden;
 }
-
 .sliderContainer {
-  position: relative; /* Add a position value to the container */
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+  min-height: 100vh;
+  max-height: 120vh;
 }
 
-img {
-  right: 5%;
-  perspective: 100%;
-  bottom: 5%;
-  width: 300px;
+.heroTitle {
+  width: 70%;
+  padding: 3% 10% 0 10%;
+  position: relative;
+  color: #fff;
+  font-size: clamp(30px, 10vw, 68px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 1000;
+}
+.heroTitle button {
+  color: #232323;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  border: none;
+  background-color: #77f199;
+  border-radius: 50px;
+  height: 54px;
+  width: 230px;
+}
+
+.heroTitle button:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  filter: brightness(0.5);
+}
+.heroTitle button:hover svg {
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+.heroTitle button::after {
+  transition: all 0.3s;
+}
+
+.right button {
+  position: absolute;
+  color: #232323;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  border: none;
+  background-color: #77f199;
+  border-radius: 30px;
+  height: 45px;
+  width: 180px;
+  right: 8%;
+  bottom: 47%;
+}
+.left p {
+  padding-top: 5%;
+  color: #989898;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 155.523%; /* 37.325px */
+}
+
+.right button:hover {
+  cursor: pointer;
+  transition: all 0.3s;
+  filter: brightness(0.5);
+}
+.right button:hover svg {
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+.right button::after {
+  transition: all 0.3s;
+}
+.underline {
+  position: relative;
+  background-image: linear-gradient(#98f1c1, #419869f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.underline::after {
+  content: "";
+  width: 100%;
+  height: 80px;
+  background-image: url("images/underline.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: -50%; /* Added */
+}
+.sliderContainer img {
+  position: absolute;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+.right img {
+  width: 250px;
   height: 400px;
   border-radius: 30px;
   cursor: pointer;
-  position: absolute;
-  transition: transform 0.9s ease;
   filter: brightness(0.5);
+  transition: transform 0.9s ease;
+}
+.right .slider {
+  width: 60%;
+  height: 80%;
+  display: flex;
+  align-items: start;
+  justify-content: end;
+}
+.left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  height: 70%;
+  margin: auto 0 auto 10%;
+}
+.left h1 {
+  color: #fff;
+  font-size: clamp(25px, 4vw, 48px);
+  font-style: normal;
+  padding-bottom: 30px;
+}
+.video {
+  display: flex;
+  /* z-index: 1; */
+  border-radius: 35px;
+  width: 100%;
+  height: auto;
+}
+
+.shadow {
+  box-shadow: 0px 20px 80px 1px #419869f7;
+}
+
+.buttons {
+  padding: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 60vh;
+  gap: 30px;
+}
+.buttons h3 {
+  padding-bottom: 3%;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #fff;
+}
+
+.buttonA {
+  display: flex;
+  flex-direction: column;
+}
+.builder {
+  width: 100%;
+  height: 35%;
+  border-radius: 20px;
+  background-image: url("backer.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #252525;
+  filter: brightness(0.5);
+}
+.buttonB {
+  display: flex;
+  flex-direction: column;
+}
+.gallery {
+  width: 100%;
+  height: 35%;
+  border-radius: 20px;
+  background-image: url("galleryEx.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid #252525;
+  filter: brightness(0.5);
+}
+.buttonA .builder:hover,
+.buttonB .gallery:hover {
+  z-index: 100;
+  transition: all 0.3s;
+  scale: 1.1;
+  filter: brightness(1);
+  background-size: 120% auto;
+}
+.buttonA .builder:hover::before,
+.buttonB .gallery:hover::before {
+  content: ""; /* Add an empty string to create the ::before pseudo-element */
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(65, 152, 105, 0.6),
+    transparent 20%
+  );
+  border-radius: inherit;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Set a lower z-index so that the pseudo-element appears behind the image */
+}
+.buttonA .builder:hover::before,
+.buttonB .gallery:hover::before {
+  z-index: 200; /* Increase the z-index on hover so that the pseudo-element appears above the image */
+}
+
+@media (max-width: 1330px) {
+  .heroTitle {
+    padding: 0 2%;
+  }
+  .radial {
+    display: none;
+  }
+  .right img {
+    margin-top: 10%;
+  }
+  .right h1 {
+    display: none;
+  }
+  .underline::after {
+    content: "";
+    width: 100%;
+    height: 60%;
+    background-image: url("images/underline.svg");
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center;
+    display: flex;
+    position: absolute;
+    align-items: end;
+    left: 0;
+  }
+
+  .left {
+    height: auto; /* Adjust the height to fit its content */
+    padding-top: 20%;
+    margin: 2% 2%; /* Add some margin for spacing */
+    width: 100%; /* Make it take the full width */
+    /* margin-top: 50%; */
+  }
+  .right {
+    display: none;
+  }
+  .buttons {
+    padding: 0 2%;
+  }
 }
 
 /* Add a media query for responsiveness */
 @media (max-width: 768px) {
-  img {
-    width: 200px; /* Adjust the width for smaller screens */
-    height: 267px; /* Adjust the height proportionally */
-    right: 2%; /* Adjust the position for smaller screens */
-    bottom: 2%;
+  .heroTitle {
+    padding: 0 2%;
+  }
+  .heroTitle button {
+    border-radius: 10px;
+    margin: 20px 0;
+    height: 45px;
+    width: 200px;
+    font-size: 20px;
+  }
+  .radial {
+    display: none;
+  }
+  .right img {
+    margin-top: 10%;
+  }
+  .right h1 {
+    display: none;
+  }
+  .underline::after {
+    content: "";
+    width: 100%;
+    height: 60%;
+    background-image: url("images/underline.svg");
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center;
+    display: flex;
+    position: absolute;
+    align-items: end;
+    left: 0;
+  }
+
+  .sliderContainer {
+    flex-direction: column;
+    min-height: 80vh;
+  }
+  .left {
+    height: auto;
+    margin: 0px 5%;
+    width: 90%;
+  }
+
+  .video {
+    border-radius: 10px;
+  }
+  .buttons {
+    grid-template-columns: repeat(1, 1fr);
+    height: 80vh;
+  }
+  .builder {
+    height: 90%;
+  }
+  .gallery {
+    height: 90%;
   }
 }
 
-.sliderContainer span {
-  position: absolute;
-  right: 18%;
-  top: 40%;
-  font-size: 40px;
-  font-style: normal;
-  line-height: normal;
-  color: #ffff;
-}
-
-.active {
-  transform: translateX(-20%);
+.right .active {
+  transform: translateX(0);
   box-shadow: #252525 20px 20px;
   scale: 1.2;
   z-index: 2;
@@ -56,7 +349,7 @@ img {
 }
 
 img {
-  transform: translateX(110%);
+  transform: translateX(130%);
 }
 
 .next {
@@ -65,13 +358,5 @@ img {
 }
 
 .active:hover {
-  perspective: preserve-3d;
-  transform: scale(1.1) rotate3d(1, -5, -5, 3deg);
-  transform-origin: center; /* Adjust the rotation origin */
-}
-
-section {
-  text-align: center;
-  height: 100vh;
-  width: 100vw;
+  transform: scale(1.01) rotate3d(1, 1, 1, -5deg);
 }
