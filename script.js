@@ -70,6 +70,7 @@ const handleOnMouseMove = (e) => {
   currentTarget.style.setProperty("--mouse-x", x + "px");
   currentTarget.style.setProperty("--mouse-y", y + "px");
 };
+
 for (const card of document.querySelectorAll(".builder")) {
   card.addEventListener("mousemove", handleOnMouseMove);
 }
@@ -77,3 +78,18 @@ for (const card of document.querySelectorAll(".builder")) {
 for (const card of document.querySelectorAll(".gallery")) {
   card.addEventListener("mousemove", handleOnMouseMove);
 }
+
+//  fade in animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else entry.target.classList.remove("show");
+  });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((element) => {
+  observer.observe(element);
+});

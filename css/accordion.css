@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background: #111111;
+  color: white;
+}
+
+.accordion {
+  min-height: 100vh;
+  width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Modified to have two columns */
+  gap: 100px;
+}
+
+.accordionLeft,
+.accordionRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Set the accordionRight content to take full height */
+.accordionRight {
+  display: flex;
+
+  align-items: stretch;
+}
+.accordionLeft {
+  display: flex;
+  align-items: stretch;
+}
+
+.border {
+  /* max-width: 700px; */
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #232323;
+}
+
+.faq {
+  /* max-width: 700px; */
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #232323;
+  cursor: pointer;
+}
+
+.opener {
+  align-items: center;
+}
+
+.opener p {
+  width: 100%;
+  color: #acacac;
+  font-family: "inter", sans-serif;
+  font-size: 1.125rem;
+
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.opener h1 {
+  max-width: 100%;
+  font-family: "inter", sans-serif;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 150%;
+  padding-bottom: 3%;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question h3 {
+  justify-content: center;
+  color: #98f1c1;
+  font-family: "inter", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 38.4px */
+}
+
+.answer {
+  height: 0;
+  max-height: 0; /* Set an initial max-height for .answer */
+  overflow: hidden;
+  transition: height 1.4s, max-height 1.4s;
+}
+
+.answer p {
+  font-family: "inter", sans-serif;
+  padding-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 150%;
+}
+
+.faq.activeAccordion .answer {
+  height: auto;
+  max-height: 300px;
+}
+
+.faq:not(.activeAccordion) .answer {
+  max-height: 0;
+  transition: max-height 0s, height 0s; /* Disable transition for non-active .faq elements */
+}
+
+@media (max-width: 1330px) {
+  .accordion {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin: 0 auto;
+    max-width: 80vw;
+  }
+  .opener p,
+  .opener h1 {
+    max-width: 90vw;
+  }
+  .faq {
+    max-width: 90vw;
+  }
+  .faq h3 {
+    font-size: 1.3rem;
+  }
+  .faq p {
+    font-size: 1.125rem;
+  }
+  .border {
+    display: none;
+  }
+
+  .accordionLeft,
+  .accordionRight {
+    margin: 0; /* Remove any margin between the left and right sections */
+  }
+  .accordionRight {
+    justify-content: start;
+  }
+  .accordionLeft {
+    justify-content: end;
+  }
+}

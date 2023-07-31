@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+nav {
+  position: sticky;
+  top: 0;
+  background: #111111ea;
+  height: 70px;
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  border-bottom: 1px solid #2e2e2e;
+}
+.nav {
+  width: 1300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo svg {
+  fill: #898989;
+}
+.logo svg:hover {
+  fill: #fff;
+  transition: all 0.3s;
+}
+.navLinks {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  list-style: none;
+  font-size: 15px;
+  gap: 20px;
+}
+.github svg {
+  border-left: #898989 1px solid;
+}
+.navLinks .link {
+  text-decoration: none;
+  color: #898989;
+  padding: 5px 10px;
+}
+.navLinks a svg {
+  padding-left: 20px;
+  fill: #898989;
+}
+.navLinks li .link:hover {
+  color: #fff;
+  transition: all 0.3s;
+  background: #8d8d8d77;
+  border-radius: 5px;
+}
+.navLinks a svg:hover {
+  fill: #fff;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 1330px) {
+  .hamburger {
+    display: none;
+  }
+  .closeHamburger {
+    display: none;
+  }
+  .video {
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 1330px) {
+  .logo {
+    display: none;
+  }
+  nav {
+    display: none;
+    z-index: 100000;
+    position: fixed;
+    background: #000000d8;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+  }
+  nav .navLinks {
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100vw;
+    margin: 0 auto;
+  }
+  nav a {
+    font-size: 2rem;
+    color: #c1c1c1;
+  }
+  .github svg {
+    border-left: none;
+  }
+
+  .hamburger svg {
+    fill: #98f1c1;
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Adjust this value to position the icon as needed */
+    z-index: 10000;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    transform: translateY(0);
+    transition: transform 0.1s ease-in-out;
+    animation: moveUpDown 2s infinite alternate;
+  }
+
+  .hamburger svg:hover {
+    fill: #006d53;
+    transform: translateY(1px);
+    transition: all 0.2s;
+  }
+  .closeHamburger svg {
+    fill: #e7e7e7;
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    right: 5%;
+    top: 3%;
+    transform: translateY(1px);
+    transition: transform 0.1s ease-in-out;
+    animation: moveUpDown 2s infinite alternate;
+  }
+  .closeHamburger svg:hover {
+    fill: #006d53;
+    transform: translateY(1px);
+    transition: all 0.2s;
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px); /* Move up by 10 pixels */
+  }
+}
