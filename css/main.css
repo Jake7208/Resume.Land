@@ -44,7 +44,7 @@ html {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  z-index: 1000;
+  /* z-index: 1000; */
   padding: 5% 0 10% 0;
 }
 .heroContainer button {
@@ -57,11 +57,11 @@ html {
   line-height: normal;
   text-decoration: none;
   border: none;
-  background-color: #77f199;
+  background-color: #98f1c1;
   border-radius: 50px;
   height: 48px;
   width: 200px;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 .heroContainer button:hover {
@@ -121,6 +121,7 @@ a {
   position: relative;
   display: flex;
   width: 50%;
+  z-index: 2;
 }
 
 .right img {
@@ -146,7 +147,7 @@ a {
   line-height: normal;
   text-decoration: none;
   border: none;
-  background-color: #77f199;
+  background-color: #98f1c1;
   border-radius: 30px;
   height: 45px;
   width: 180px;
@@ -202,8 +203,8 @@ a {
   cursor: pointer;
   width: 100%;
   height: auto;
-  border: 1px solid #252525;
-  box-shadow: #090909 0px 0px 10px 10px;
+  box-shadow: #0d0d0d 0px 0px 10px 5px;
+  z-index: 2;
 }
 
 .buttons {
@@ -264,7 +265,7 @@ a {
   background-position: 30% 30%;
   filter: brightness(1) grayscale(0);
   border: #111111 1px solid;
-  box-shadow: #090909 0px 0px 10px 10px;
+  box-shadow: #141414 0px 0px 5px 3px;
 }
 .buttonA .builder:hover::before,
 .buttonB .gallery:hover::before {
@@ -284,13 +285,64 @@ a {
 }
 .buttonA .builder:hover::before,
 .buttonB .gallery:hover::before {
-  z-index: 200;
+  z-index: 100;
 }
 
 .buttonA .builder:not(:hover),
 .buttonB .gallery:not(:hover) {
   transition: all 0.8s;
   scale: 1;
+}
+.typography {
+  font-size: 6rem;
+  color: #170c0c;
+  position: relative;
+}
+.typography p {
+  position: absolute;
+  font-weight: 700;
+  z-index: 0;
+  color: #11111100;
+  -webkit-text-stroke: 0.3px #5050505a;
+  top: -300px;
+  right: -10%;
+  white-space: nowrap;
+  font-size: 30rem;
+}
+.typographyB {
+  font-size: 6rem;
+  color: #170c0c;
+  position: relative;
+}
+.typographyB p {
+  position: absolute;
+  font-weight: 700;
+  z-index: 1;
+  color: #11111100;
+  -webkit-text-stroke: 0.3px #5050505a;
+  top: -100px;
+  left: 5%;
+  white-space: nowrap;
+  font-size: 30rem;
+}
+.closingHero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.closingImg {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  z-index: 2;
+}
+.closingText {
+  background-image: url("../images/Rectangle 72.svg");
+  background-repeat: no-repeat;
+  background-size: cover; /* or use "contain" depending on your needs */
+  position: relative;
+  /* display: flex; */
+  /* justify-content: end; */
 }
 
 @media (max-width: 1330px) {
@@ -412,8 +464,7 @@ a {
     text-align: left;
     font-size: 1.2rem;
   }
-  .left h1 {
-  }
+
   .builder,
   .gallery {
     height: 200px;
@@ -426,13 +477,13 @@ a {
 .right .active {
   transform: translateX(0);
   border: #111111 1px solid;
-  box-shadow: #090909 0px 0px 10px 10px;
+  box-shadow: #0a0a0a 0px 0px 5px 3px;
   scale: 1.2;
   z-index: 2;
   filter: brightness(1);
 }
 
-img {
+.right img {
   transform: translateX(130%);
 }
 

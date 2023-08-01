@@ -26,9 +26,28 @@ nav {
 .logo svg {
   fill: #898989;
 }
-.logo svg:hover {
-  fill: #fff;
+
+.logo {
+  color: white;
+}
+.logo:hover {
+  color: #98f1c1;
+  cursor: pointer;
+}
+
+.logo:hover svg {
+  fill: #98f1c1;
+
   transition: all 0.3s;
+  cursor: pointer;
+}
+
+.logo p {
+  margin-left: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: end;
+  justify-content: end;
 }
 .navLinks {
   display: flex;
@@ -70,6 +89,12 @@ nav {
   .video {
     border-radius: 10px;
   }
+  .buttons {
+    min-height: 40vh;
+  }
+  .accordion {
+    min-height: 90vh;
+  }
 }
 @media screen and (max-width: 1330px) {
   .logo {
@@ -93,10 +118,9 @@ nav {
     justify-content: center;
     height: 100%;
     width: 100vw;
-    margin: 0 auto;
   }
   nav a {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #c1c1c1;
   }
   .github svg {
@@ -124,7 +148,7 @@ nav {
     transition: all 0.2s;
   }
   .closeHamburger svg {
-    fill: #e7e7e7;
+    fill: #98f1c1;
     position: absolute;
     border: none;
     background: none;
