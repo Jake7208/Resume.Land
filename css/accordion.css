@@ -17,6 +17,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Modified to have two columns */
   gap: 100px;
+  z-index: 5;
 }
 
 .accordionLeft,
@@ -24,6 +25,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 5;
 }
 
 /* Set the accordionRight content to take full height */

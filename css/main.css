@@ -51,7 +51,7 @@ html {
   position: relative;
   color: #232323;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -64,20 +64,32 @@ html {
   /* z-index: 100; */
 }
 
-.heroContainer button:hover {
+.heroContainer button:hover,
+.right button:hover,
+.closingText button:hover,
+.closingTextB button:hover {
   cursor: pointer;
   transition: all 0.3s;
   filter: brightness(0.5);
 }
-.heroContainer button:hover svg {
+.heroContainer button:hover svg,
+.right button:hover svg,
+.closingText button:hover svg,
+.closingTextB button:hover svg {
   transform: rotate(180deg);
   transition: all 0.3s;
 }
-.heroContainer button:not(:hover) svg {
+.heroContainer button:not(:hover) svg,
+.right button:not(:hover) svg,
+.closingText button:not(:hover) svg,
+.closingTextB button:not(:hover) svg {
   transform: rotate(0deg);
   transition: all 0.3s;
 }
-.heroContainer button::after {
+.heroContainer button::after,
+.right button::after,
+.closingText button::after,
+.closingTextB button::after {
   transition: all 0.3s;
 }
 
@@ -89,7 +101,7 @@ a {
   padding: 5% 0 10% 0%;
   color: #989898;
   font-family: Inter;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-style: normal;
   font-weight: 400;
   line-height: 155.523%; /* 37.325px */
@@ -121,7 +133,7 @@ a {
   position: relative;
   display: flex;
   width: 50%;
-  z-index: 2;
+  z-index: 3; /* Increase this value */
 }
 
 .right img {
@@ -141,7 +153,7 @@ a {
 .right button {
   color: #232323;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -149,29 +161,13 @@ a {
   border: none;
   background-color: #98f1c1;
   border-radius: 30px;
-  height: 45px;
-  width: 180px;
+  height: 48px;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.right button:hover {
-  cursor: pointer;
-  transition: all 0.3s;
-  filter: brightness(0.5);
-}
-.right button:not(:hover) svg {
-  transform: rotate(0deg);
-  transition: all 0.3s;
-}
-.right button:hover svg {
-  transform: rotate(-180deg);
-  transition: all 0.3s;
-}
-.right button::after {
-  transition: all 0.3s;
-}
 .right .slider {
   width: 60%;
   height: 58%;
@@ -191,6 +187,7 @@ a {
   height: auto;
   padding: 10% 0;
   margin: 0;
+  z-index: 5;
 }
 
 .left h1 {
@@ -198,6 +195,7 @@ a {
   font-size: clamp(2.1rem, 4vw, 3.25rem);
   font-style: normal;
   padding-bottom: 30px;
+  z-index: 5;
 }
 .video {
   cursor: pointer;
@@ -208,10 +206,12 @@ a {
 }
 
 .buttons {
+  position: relative;
   min-height: 40vh;
   max-width: 1300px;
   margin: 0 auto;
   display: grid;
+  z-index: 5;
   grid-template-columns: 1fr 1fr; /* Modified to have two columns */
 }
 .buttons h3 {
@@ -293,58 +293,247 @@ a {
   transition: all 0.8s;
   scale: 1;
 }
-.typography {
+.typography,
+.typographyB,
+.typographyA,
+.typographyC {
   font-size: 6rem;
   color: #170c0c;
   position: relative;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -ms-user-select: none;
+  z-index: 1; /* Update this to a higher value */
+}
+.typographyA p {
+  position: absolute;
+  font-weight: 700;
+  z-index: 0;
+  color: #11111100;
+  -webkit-text-stroke: 1px #5050505a;
+  top: 300px;
+  left: -10%;
+  white-space: nowrap;
+  font-size: 30rem;
+}
+.typographyC p {
+  position: absolute;
+  font-weight: 700;
+  z-index: 0;
+  color: #11111100;
+  -webkit-text-stroke: 1px #98f1c22b;
+  top: -300px;
+  left: 30%;
+  white-space: nowrap;
+  font-size: 30rem;
 }
 .typography p {
   position: absolute;
   font-weight: 700;
   z-index: 0;
   color: #11111100;
-  -webkit-text-stroke: 0.3px #5050505a;
+  -webkit-text-stroke: 1px #5050505a;
   top: -300px;
   right: -10%;
   white-space: nowrap;
   font-size: 30rem;
 }
-.typographyB {
-  font-size: 6rem;
-  color: #170c0c;
-  position: relative;
-}
+
 .typographyB p {
   position: absolute;
   font-weight: 700;
   z-index: 1;
   color: #11111100;
-  -webkit-text-stroke: 0.3px #5050505a;
+  -webkit-text-stroke: 1px #5050505a;
+
   top: -100px;
-  left: 5%;
+  left: -30%;
   white-space: nowrap;
   font-size: 30rem;
 }
-.closingHero {
-  position: relative;
+.closingSection {
+  height: 110vh;
+  background-image: url("../images/Rectangle\ 72.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.closingContainer {
   display: grid;
+  width: 80vw;
+  margin: 0 auto;
   grid-template-columns: 1fr 1fr;
 }
 .closingImg {
+  position: relative;
   display: flex;
-  width: 100%;
-  justify-content: end;
   z-index: 2;
 }
 .closingText {
-  background-image: url("../images/Rectangle 72.svg");
-  background-repeat: no-repeat;
-  background-size: cover; /* or use "contain" depending on your needs */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 5;
+}
+.closingText h3 {
+  color: #98f1c1;
+  text-align: left;
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+.closingText p {
+  padding-top: 3%;
+  line-height: 150%;
+  font-size: 1.3rem;
+  width: 70%;
+}
+.closingImg {
   position: relative;
-  /* display: flex; */
-  /* justify-content: end; */
+  animation: moveUpDown2 2s infinite alternate;
+}
+.closingText button,
+.closingTextB button {
+  margin-top: 5%;
+  position: relative;
+  color: #232323;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  border: none;
+  background-color: #98f1c1;
+  border-radius: 10px;
+  height: 48px;
+  width: 300px;
+  display: flex; /* Add this line to enable flexbox layout */
+  align-items: center; /* Add this line to center items vertically */
+  justify-content: center;
+  gap: 5px;
 }
 
+.closingTextB a {
+  width: 80%;
+}
+
+.upperline {
+  position: relative;
+}
+.upperline::after {
+  content: "";
+  background-repeat: no-repeat;
+  background-color: #98f1c1;
+  position: absolute;
+  width: 70%;
+  height: 5px;
+  border-radius: 5px;
+  left: 0;
+  top: -10px;
+}
+.closingSectionB {
+  height: 110vh;
+  background-image: url("../images/Rectangle\ 75.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.closingImgB {
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
+.closingTextB {
+  align-items: end;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 5;
+}
+.closingTextB h3 {
+  color: #98f1c1;
+  line-height: 150%;
+  font-weight: 600;
+  width: 80%;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+.closingTextB p {
+  line-height: 150%;
+  padding-top: 3%;
+  width: 80%;
+  font-size: 1.3rem;
+}
+.closingImgB {
+  position: relative;
+  animation: moveUpDown2 2s infinite alternate;
+}
+/*  foooter */
+
+.footerNav {
+  width: 100%;
+  display: flex;
+  padding-bottom: 4%;
+}
+.footerNavLeft {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Lower nav section */
+.footerNavRightContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.footerNavRightA,
+.footerNavRightB {
+  margin-right: 12%;
+  display: flex;
+  flex-direction: column;
+  align-items: left; /* Center the content horizontally */
+  color: #d2d2d2;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 200%;
+}
+
+.footerNavRightA .lowerlink:hover,
+.footerNavRightB .lowerlink:hover {
+  color: #525252;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Additional styles for the links */
+
+.footerNavRightA .lowerlink,
+.footerNavRightB .lowerlink {
+  flex-direction: column;
+  color: #98f1c1;
+  text-decoration: none;
+}
+/* End of lower nav */
+.copyright {
+  background: #121212;
+  height: 60px;
+  color: #ffffff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 @media (max-width: 1330px) {
   .heroTitle {
     width: 80vw;
@@ -405,6 +594,25 @@ a {
   .video {
     border-radius: 5px;
   }
+  .closingSection,
+  .closingSectionB {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw;
+    height: 50vh;
+    background: #232323;
+    background-image: none;
+    margin-top: 10px;
+  }
+  .closingImg,
+  .closingImgB {
+    display: none;
+  }
+  .closingText,
+  .closingTextB {
+    width: 80vw;
+    margin: 0 auto;
+  }
 }
 
 /* Add a media query for responsiveness */
@@ -417,7 +625,7 @@ a {
     margin: 20px 0;
     height: 45px;
     width: 160px;
-    font-size: 18px;
+    font-size: 1.2rem;
   }
   .radial {
     display: none;
@@ -471,6 +679,36 @@ a {
   }
   .buttons h3 {
     font-size: 28px;
+  }
+  .closingText {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: left;
+    align-items: center;
+  }
+  .closingTextB {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: left;
+    align-items: center;
+  }
+  .closingText p,
+  .closingTextB p {
+    width: 90%;
+  }
+  .typography p,
+  .typographyB p,
+  .typographyA p {
+    font-size: 13rem;
+    z-index: 1;
+    display: none;
+  }
+  .typographyC {
+    top: 300px;
+  }
+  .typographyC p {
+    display: none;
+    font-size: 20rem;
   }
 }
 

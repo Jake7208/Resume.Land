@@ -164,6 +164,10 @@ nav {
     transform: translateY(1px);
     transition: all 0.2s;
   }
+  .accordion {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
 }
 
 @keyframes moveUpDown {
@@ -172,5 +176,13 @@ nav {
   }
   100% {
     transform: translateY(-10px); /* Move up by 10 pixels */
+  }
+}
+@keyframes moveUpDown2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px); /* Move up by 10 pixels */
   }
 }
