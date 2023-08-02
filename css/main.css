@@ -46,6 +46,7 @@ html {
   line-height: normal;
   /* z-index: 1000; */
   padding: 5% 0 10% 0;
+  z-index: 5;
 }
 .heroContainer button {
   position: relative;
@@ -74,10 +75,13 @@ html {
 }
 .heroContainer button:hover svg,
 .right button:hover svg,
-.closingText button:hover svg,
 .closingTextB button:hover svg {
-  transform: rotate(180deg);
+  transform: rotate(360deg);
   transition: all 0.3s;
+}
+.closingText button:hover svg {
+  transform: rotate(45deg);
+  transition: all 0.2s;
 }
 .heroContainer button:not(:hover) svg,
 .right button:not(:hover) svg,
@@ -305,6 +309,7 @@ a {
   user-select: none;
   -ms-user-select: none;
   z-index: 1; /* Update this to a higher value */
+  animation: moveSideToSide;
 }
 .typographyA p {
   position: absolute;
@@ -411,7 +416,7 @@ a {
   display: flex; /* Add this line to enable flexbox layout */
   align-items: center; /* Add this line to center items vertically */
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .closingTextB a {
@@ -692,8 +697,16 @@ a {
     text-align: left;
     align-items: center;
   }
+  .closingText h3,
+  .closingTextB h3 {
+    width: 90%;
+  }
   .closingText p,
   .closingTextB p {
+    width: 90%;
+  }
+  .closingText a,
+  .closingTextB a {
     width: 90%;
   }
   .typography p,
@@ -732,4 +745,13 @@ a {
 
 .active:hover {
   transform: scale(1.05);
+}
+.animated-element {
+  opacity: 0;
+  animation: none;
+}
+.animate-on-scroll {
+  opacity: 1;
+  transition: 0.5s all;
+  animation: moveSideToSide 4s forwards ease-in;
 }

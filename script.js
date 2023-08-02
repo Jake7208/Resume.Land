@@ -92,3 +92,20 @@ const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((element) => {
   observer.observe(element);
 });
+// fade in text animation
+
+// Function to handle the intersection observer callback
+// JavaScript
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate-on-scroll");
+    } else entry.target.classList.remove("animate-on-scroll");
+  });
+});
+
+const hiddenElements2 = document.querySelectorAll(".animated-element");
+
+hiddenElements2.forEach((element) => {
+  observer2.observe(element);
+});

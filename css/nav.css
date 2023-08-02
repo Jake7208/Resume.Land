@@ -186,3 +186,12 @@ nav {
     transform: translateY(-20px); /* Move up by 10 pixels */
   }
 }
+
+@keyframes moveSideToSide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
