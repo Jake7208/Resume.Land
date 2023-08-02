@@ -95,17 +95,55 @@ hiddenElements.forEach((element) => {
 // fade in text animation
 
 // Function to handle the intersection observer callback
-// JavaScript
-const observer2 = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-on-scroll");
-    } else entry.target.classList.remove("animate-on-scroll");
-  });
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".typographyA", {
+  scrollTrigger: {
+    trigger: ".typographyA",
+    start: "heroText button",
+    end: "typography",
+    scrub: 5,
+    // markers: true,
+  },
+  x: -500,
+  ease: "power1.inOut", // Use an appropriate easing function
+  duration: 3,
+});
+gsap.to(".typography", {
+  scrollTrigger: {
+    trigger: ".typography",
+    start: "top center",
+    end: "top += 100",
+    scrub: 3,
+    // markers: true,
+  },
+  x: 500,
+  ease: "power1.inOut", // Use an appropriate easing function
+  duration: 3,
+});
+gsap.to(".typographyB", {
+  scrollTrigger: {
+    trigger: ".typographyB",
+    start: "bottom bottom",
+    end: "closingText",
+    scrub: 3,
+    // markers: true,
+  },
+  x: 900,
+  ease: "power1.inOut", // Use an appropriate easing function
+  duration: 3,
 });
 
-const hiddenElements2 = document.querySelectorAll(".animated-element");
-
-hiddenElements2.forEach((element) => {
-  observer2.observe(element);
+gsap.to(".typographyC", {
+  scrollTrigger: {
+    trigger: ".typographyC",
+    start: "bottom bottom",
+    end: "closingImgB",
+    scrub: 2,
+    // markers: true,
+  },
+  x: -900,
+  ease: "power1.in", // Use an appropriate easing function
+  duration: 3,
 });

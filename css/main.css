@@ -308,7 +308,7 @@ a {
   -webkit-user-select: none;
   user-select: none;
   -ms-user-select: none;
-  z-index: 1; /* Update this to a higher value */
+  z-index: 1;
   animation: moveSideToSide;
 }
 .typographyA p {
@@ -746,12 +746,22 @@ a {
 .active:hover {
   transform: scale(1.05);
 }
-.animated-element {
-  opacity: 0;
-  animation: none;
-}
-.animate-on-scroll {
-  opacity: 1;
-  transition: 0.5s all;
-  animation: moveSideToSide 4s forwards ease-in;
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+  .animate-on-scroll {
+    transition: none;
+  }
+  .closingImg,
+  .closingImgB {
+    transition: none;
+  }
+  .typographyA,
+  .typography,
+  .typographyB,
+  .typographyC {
+    transition: none;
+  }
 }
