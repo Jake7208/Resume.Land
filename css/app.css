@@ -104,7 +104,7 @@ body {
 
 .orientation,
 .component {
-  width: 98%;
+  width: 350px;
   height: 45px;
   display: flex;
   justify-content: space-between;
@@ -112,10 +112,10 @@ body {
   color: #ffffff;
   background: #1a1919;
   stroke: #98f1c1;
-  margin: 10px auto;
   padding: 0 20px;
   cursor: pointer;
   border: none;
+  margin: 10px auto;
   border-radius: 16px;
 }
 
@@ -153,12 +153,62 @@ body {
   font-size: 2rem;
   font-weight: 400;
   font-family: "Comfortaa", sans-serif;
-  margin: 0 15px;
+  margin-left: 10px;
+}
+
+.componentsAccordion {
+  width: 350px;
+  max-width: 350px;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 .components {
   display: flex;
   flex-direction: column;
+  width: fit-content;
   align-items: center;
-  list-style-type: none;
+  margin: 0 auto;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: none;
+}
+
+.question h3 {
+  font-size: 1.2rem;
+}
+.answer li,
+.answer li button {
+  list-style: none;
+  width: 350px;
+  text-decoration: none;
+  background: #232323;
+  border-radius: 20px;
+  padding: none;
+  margin: 5px auto;
+  cursor: pointer;
+  border: none;
+}
+.answer li button:hover {
+  color: #98f1c1;
+  transition: all 0.3s;
+}
+.answer h3 {
+  padding: 1rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.active {
+  max-height: 500px;
 }

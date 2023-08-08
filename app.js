@@ -53,3 +53,12 @@ output.addEventListener("wheel", (e) => {
 
   output.style.scale = `${zoom}`;
 });
+
+// making the rest of the components buttons appear
+const questions = document.querySelectorAll(".component.question");
+
+questions.forEach((question) => {
+  question.addEventListener("click", () => {
+    question.nextElementSibling.classList.toggle("active");
+  });
+});
