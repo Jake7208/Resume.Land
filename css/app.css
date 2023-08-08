@@ -101,7 +101,9 @@ body {
 .flip {
   transform: rotate(90deg);
 }
-
+.orientation {
+  margin: 20px auto;
+}
 .orientation,
 .component {
   width: 350px;
@@ -115,7 +117,7 @@ body {
   padding: 0 20px;
   cursor: pointer;
   border: none;
-  margin: 10px auto;
+  /* margin: 10px auto; */
   border-radius: 16px;
 }
 
@@ -183,8 +185,14 @@ body {
 }
 .answer li,
 .answer li button {
+  color: #ffffff;
   list-style: none;
   width: 350px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
   text-decoration: none;
   background: #232323;
   border-radius: 20px;
@@ -193,6 +201,9 @@ body {
   cursor: pointer;
   border: none;
 }
+.upper {
+  transform: rotate(90deg);
+}
 .answer li button:hover {
   color: #98f1c1;
   transition: all 0.3s;
@@ -200,7 +211,8 @@ body {
 .answer h3 {
   padding: 1rem;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .answer {
@@ -210,5 +222,6 @@ body {
 }
 
 .active {
+  border-radius: 0 0 20px;
   max-height: 500px;
 }
