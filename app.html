@@ -6,5 +6,84 @@
     <title>Resume.Land Builder</title>
     <link rel="stylesheet" href="./css/app.css" />
   </head>
-  <body></body>
+  <body>
+    <button data-open-modal>open modal</button>
+
+    <dialog data-modal class="modal">
+      <button data-close-modal class="closeModal">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L21 21M1 21L21 1"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <div class="text">
+        <h1>Welcome,</h1>
+        <br />
+        <p>
+          Let's kick off the process by going through a few forms to get you
+          started. These forms will help you initiate your resume creation
+          process.
+          <br />
+          <br />
+          Please keep in mind that these forms are entirely optional, as we
+          prioritize your privacy and do not retain any data. So be sure to
+          download your PDF once you've finished.
+          <br />
+          <br />
+          And don't forget to enjoy the process of building your resume!
+          <br />
+          <br />
+          Resume.Land, Crafted by Jacob Price
+        </p>
+      </div>
+      <button class="goButton" data-next-modal>Go!</button>
+    </dialog>
+
+    <section class="sectionWrapper">
+      <section class="inputSection">
+        <button class="orientation">
+          <p>Change orientation</p>
+          <svg
+            width="17"
+            height="14"
+            viewBox="0 0 17 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 1C13.3137 1 16 3.68629 16 7C16 10.3137 13.3137 13 10 13C6.68629 13 4 10.3137 4 7V4.5"
+              stroke=""
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M1 7L4 4L7 7"
+              stroke=""
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </section>
+
+      <section class="outputSection">
+        <div class="output"></div>
+      </section>
+
+      <section class="assistanceSection">
+        <div class="assistance"></div>
+      </section>
+    </section>
+  </body>
+  <script src="/app.js"></script>
 </html>

@@ -1,8 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
 
 body {
   background: #232323;
+  font-family: "Inter", sans-serif;
+}
+.modal {
+  padding: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #343333;
+  border-radius: 0.25rem;
+  z-index: 10;
+  height: 500px;
+  width: 50%;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.modal .text {
+  margin: 2rem auto;
+  width: 80%;
+}
+.closeModal {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 2%;
+  top: 3%;
+}
+
+.goButton {
+  font-size: 1.2rem;
+  background: #98f1c1;
+  border: none;
+  width: 191px;
+  height: 56px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.goButton:hover {
+  filter: brightness(0.8);
+  transition: all 0.3s ease;
+}
+.modal .goButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+.sectionWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "input output output output output assistance";
+}
+
+.inputSection {
+  grid-area: input;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+  background: #343333;
+  align-items: center;
+  border-radius: 20px;
+  margin: 10px auto;
+  padding: 20px; /* Add padding to align content */
+}
+
+.output {
+  width: 8.5in;
+  height: 11in;
+  background: #ffffff;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  margin: 10px auto;
+  border: 1px solid #000000;
+  overflow-y: auto;
+}
+
+.outputSection {
+  grid-area: output;
+  grid-column: span 4;
+  transition: transform 0.8s;
+}
+
+.flip {
+  transform: rotate(90deg);
+}
+
+.orientation {
+  width: 98%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  background: #1a1919;
+  stroke: #98f1c1;
+  margin: 10px auto;
+  padding: 0 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+}
+
+.orientation {
+  width: 98%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  background: #1a1919;
+  stroke: #98f1c1;
+  margin: 10px auto;
+  padding: 0 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 16px;
+}
+.orientation p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+.orientation:hover svg {
+  transform: rotate(90deg);
+  transition: all 0.3s;
+}
+
+.orientation:hover {
+  transition: all 0.8s;
+  background: #1d1d1d;
+}
+
+.assistanceSection {
+  grid-area: assistance;
+  width: 100%;
+  height: auto;
+  border: 1px solid #000000;
 }
