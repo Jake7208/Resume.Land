@@ -1,14 +1,20 @@
-const openModal = document.querySelector("[data-open-modal]");
 const closeModal = document.querySelector("[data-close-modal]");
 const modal = document.querySelector("[data-modal]");
 
-openModal.addEventListener("click", () => {
-  modal.showModal();
-});
+// Check if the modal has been shown before
+const hasModalBeenShown = localStorage.getItem("modalShown");
 
-closeModal.addEventListener("click", () => {
-  modal.close();
-});
+if (!hasModalBeenShown) {
+  // Show the modal
+  modal.showModal();
+
+  closeModal.addEventListener("click", () => {
+    modal.close();
+
+    // Store a flag in local storage to indicate that the modal has been shown
+    localStorage.setItem("modalShown", true);
+  });
+}
 
 const output = document.querySelector(".outputSection");
 const orientationButton = document.querySelector(".orientation");

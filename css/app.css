@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter:wght@200;400;600;700;800&display=swap");
 
 * {
   padding: 0;
@@ -7,8 +7,8 @@
 }
 
 body {
-  background: #232323;
   font-family: "Inter", sans-serif;
+  background: #111111;
 }
 .modal {
   padding: 0.5rem;
@@ -61,18 +61,21 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "input output output output output assistance";
+  position: relative;
 }
 
 .inputSection {
+  position: sticky;
+  top: 1%;
   grid-area: input;
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: auto;
+  height: 85%;
   background: #343333;
   align-items: center;
   border-radius: 20px;
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 20px; /* Add padding to align content */
 }
 
@@ -99,7 +102,8 @@ body {
   transform: rotate(90deg);
 }
 
-.orientation {
+.orientation,
+.component {
   width: 98%;
   height: 45px;
   display: flex;
@@ -115,27 +119,14 @@ body {
   border-radius: 16px;
 }
 
-.orientation {
-  width: 98%;
-  height: 45px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #ffffff;
-  background: #1a1919;
-  stroke: #98f1c1;
-  margin: 10px auto;
-  padding: 0 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 16px;
-}
-.orientation p {
+.orientation p,
+.component p {
   margin: 0;
   padding: 0;
   font-size: 1.2rem;
   font-weight: 200;
 }
+
 .orientation:hover svg {
   transform: rotate(90deg);
   transition: all 0.3s;
@@ -147,8 +138,27 @@ body {
 }
 
 .assistanceSection {
+  position: sticky;
+  top: 1%;
   grid-area: assistance;
-  width: 100%;
-  height: auto;
+  width: 300px;
+  height: 85%;
   border: 1px solid #000000;
+}
+
+.componentsHeader {
+  display: flex;
+  align-self: start;
+  color: #98f1c1;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: "Comfortaa", sans-serif;
+  margin: 0 15px;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
 }
